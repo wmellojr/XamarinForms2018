@@ -4,9 +4,14 @@
              xmlns:local="clr-namespace:App01_ConsultarCEP"
              x:Class="App01_ConsultarCEP.MainPage">
 
-    <StackLayout>
+    <StackLayout BackgroundColor="#FFBF00" Padding="30" Spacing="30">
+        <Image Source="LogoCorreios.png" x:Name="LOGO"/>
+        <Entry Placeholder="Digite CEP:" PlaceholderColor="#FFBF00" BackgroundColor="#FFFFFF" x:Name="CEP"/>
+        <Button Text="Buscar CEP:" TextColor="#FFFFFF" BackgroundColor="#00416B" x:Name="BOTAO"/>
+
+
         <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
+    	<Label Text=""  x:Name="RESULTADO"
            HorizontalOptions="Center"
            VerticalOptions="CenterAndExpand" />
     </StackLayout>

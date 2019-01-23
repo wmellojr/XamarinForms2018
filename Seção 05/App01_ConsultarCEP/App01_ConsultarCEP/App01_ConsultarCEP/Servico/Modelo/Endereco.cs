@@ -6,6 +6,7 @@ namespace App01_ConsultarCEP.Servico.Modelo
 {
     public class Endereco
     {
+
         public string cep { get; set; }
         public string logradouro { get; set; }
         public string complemento { get; set; }
@@ -15,6 +16,6 @@ namespace App01_ConsultarCEP.Servico.Modelo
         public string unidade { get; set; }
         public string ibge { get; set; }
         public string gia { get; set; }
-
-    }
+ 
+     }
 }
