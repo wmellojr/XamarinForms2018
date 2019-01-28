@@ -31,7 +31,7 @@ namespace App1_Vagas.Banco
 
         }
 
-        public Vaga Pesquisar(int palavra)
+        public Vaga Pesquisar(string palavra)
         {
             return _conexao.Table<Vaga>().Where(a => a.NomeVaga.Contains(palavra)).FirstOrDefault();
 

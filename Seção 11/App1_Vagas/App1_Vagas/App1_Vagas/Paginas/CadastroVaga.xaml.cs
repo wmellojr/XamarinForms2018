@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using App1_Vagas.Modelos;
+using App1_Vagas.Banco;
 
 namespace App1_Vagas.Paginas
 {
@@ -16,5 +18,26 @@ namespace App1_Vagas.Paginas
 		{
 			InitializeComponent ();
 		}
+
+        public void SalvarAction(object sender, EventArgs args)
+        {
+            //TODO  - Validar dados do Cadastro
+            Vaga vaga = new Vaga();
+            vaga.NomeVaga = NomeVaga.Text;
+            vaga.Quantidade = short.Parse(Quantidade.Text);
+            vaga.Salario = double.Parse(Salario.Text);
+            vaga.Empresa = Empresa.Text;
+            vaga.Cidade = Cidade.Text;
+            vaga.Descricao = Descricao.Text;
+            vaga.TipoContratacao = (TipoContratacao.IsToggled) ? "PJ" : "CLT";
+            vaga.Telefone = Telefone.Text;
+            vaga.Email = Email.Text;
+
+            Database database = new Database();
+            database.Cadastro(vaga);
+
+            App.Current.MainPage = new NavigationPage(new ConsultaVagas());
+        }
+
 	}
 }

@@ -4,13 +4,18 @@
              x:Class="App1_Vagas.Paginas.DetalheVaga">
     <ContentPage.Content>
         <StackLayout>
-			<StackLayout Orientation="Horizontal">
-				<Label Text="Vagas" FontSize="24" />
-			</StackLayout>
-			<StackLayout Orientation="Horizontal">
-				<Button Text="Adicionar" Clicked="GoCadastro" />
-				<Button Text="Minhas Vagas" Clicked="GoMinhasVagas" />
-			</StackLayout>
+			<Label Text="{Binding NomeVaga}" />
+			<Label Text="{Binding Empresa}" />
+			<Label Text="{Binding Quantidade}" />
+			<Label Text="{Binding Cidade}" />
+			<Label Text="{Binding Salario}" />
+			<Label Text="{Binding Descricao}" />
+			<Label Text="{Binding TipoContratacao}" />
+			<Label Text="{Binding Telefone}" />
+			<Label Text="{Binding Email}" />
+			
 		</StackLayout>
     </ContentPage.Content>
 </ContentPage>
+	
+	

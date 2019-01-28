@@ -4,9 +4,46 @@
              x:Class="App1_Vagas.Paginas.MinhasVagasCadastradas">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+			<StackLayout Orientation="Horizontal">
+				<Label Text="Vagas" FontSize="24" />
+				<Label Text="Encontre seu emprego aqui" FontSize="12" />
+			</StackLayout>
+
+			<Entry Placeholder="Pesquisar" />
+			<Label Text="15 Vagas Encontradas" />
+			<ListView>
+				<ListView.ItemTemplate>
+					<DataTemplate>
+						<Grid>
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="*" />
+								<ColumnDefinition Width="100" />
+							</Grid.ColumnDefinitions>
+							<Grid.RowDefinitions>
+								<RowDefinition Height="Auto">
+								</RowDefinition>
+							</Grid.RowDefinitions>
+							<Label Grid.Column="0" Text="{Binding NomeVaga}" FontAttributes="Bold"/>
+							<Label Grid.Column="0" Text="{Binding Empresa}" />
+							<Label Grid.Column="0" Text="{Binding Cidade}" />
+
+							<Label Text="Editar" Grid.Column="1">
+								<Label.GestureRecognizers>
+									<TapGestureRecognizer Tapped="EditarAction" CommandParameter="{Binding .}" />
+								</Label.GestureRecognizers>
+							</Label>
+							<Label Text="|" Grid.Column="1"/>
+							<Label Text="Excluir" Grid.Column="1" />
+							<Label.GestureRecognizers>
+								<TapGestureRecognizer Tapped="ExcluirAction" CommandParameter="{Binding .}" />
+							</Label.GestureRecognizers>
+
+						</Grid>
+					</DataTemplate>
+				</ListView.ItemTemplate>
+
+			</ListView>
+
+		</StackLayout>
     </ContentPage.Content>
 </ContentPage>
