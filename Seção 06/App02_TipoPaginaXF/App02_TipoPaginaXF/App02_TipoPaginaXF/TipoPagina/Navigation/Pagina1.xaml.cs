@@ -7,19 +7,19 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace App02_TipoPaginaXF.TipoPagina.Carrousel
+namespace App02_TipoPaginaXF.TipoPagina.Navigation
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class TipoPagina3 : ContentPage
+	public partial class Pagina1 : ContentPage
 	{
-		public TipoPagina3 ()
+		public Pagina1 ()
 		{
 			InitializeComponent ();
 		}
 
-        private void MudarPagina(object sender, EventArgs args)
+        private void MudarParaPagina2(object sender,EventArgs args)
         {
-            App.Current.MainPage = new NavigationPage(new Navigation.Pagina1());
+            Navigation.PushAsync(new Pagina2()) { BackgroundColor };
         }
 
     }
